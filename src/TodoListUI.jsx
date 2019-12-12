@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input, Button, List } from 'antd';
- 
+import axios from 'axios'
+
 // class TodoListUI extends Component { 
 //     render() { 
         
@@ -19,6 +20,22 @@ const TodoListUI = (props) => {
                         value={props.inputValue}
                 />
                 <Button type="primary" onClick={props.addItem}>增加</Button>
+            </div>
+            <div>
+                <Button onClick={
+                    () => {
+                        axios.get('http://localhost:3030')
+                        .then(function (response) {
+                            //alert(response.data);
+                            props.axiosToReduxTest(response.data);
+                        })
+                        .catch(function (error) {
+                           alert(error);
+                        });
+                    }
+                }
+            >axios</Button>
+            <span>{props.test}</span>
             </div>
             <div style={{margin:'10px', width:'300px'}}>
                 <List bordered dataSource={props.list}

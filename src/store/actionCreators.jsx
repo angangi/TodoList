@@ -1,4 +1,4 @@
-import {CHANGE_INPUT, ADD_ITEM, DELETE_ITEM} from './actionTypes';
+import {CHANGE_INPUT, ADD_ITEM, DELETE_ITEM, AXIOS_TO_REDUX_TEST} from './actionTypes';
 
 export const changeInputAction = (value) => ({
     type: CHANGE_INPUT,
@@ -11,6 +11,11 @@ export const addItemAction = () => ({
 
 export const deleteItemAction = (value) => ({
     type: DELETE_ITEM,
+    value
+})
+
+export const axiosToReduxTestAction = (value) => ({
+    type:  AXIOS_TO_REDUX_TEST,
     value
 })
 
