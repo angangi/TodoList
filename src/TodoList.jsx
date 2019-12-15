@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css'
 import store from './store/index';
-import {changeInputAction, addItemAction, deleteItemAction, axiosToReduxTestAction } from './store/actionCreators';
+import {changeInputAction, addItemAction, deleteItemAction, axiosToReduxTestAction, getTest } from './store/actionCreators';
 import TodoListUI from './TodoListUI';
 
 
@@ -21,6 +21,12 @@ class TodoList extends Component {
     }
 
     componentDidMount(){
+        //redux-thunk部分
+        // const action = getTest();
+        // store.dispatch(action);
+        const action = getTest();
+        store.dispatch(action);
+        //console.log('test');
         
     }
 
